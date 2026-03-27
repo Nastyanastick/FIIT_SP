@@ -5,6 +5,8 @@
 #include <utility>
 #include <string>
 
+// помощник для отладки. превращает "мусор" памяти в читаемый текст, например 0х4A покажет как 4A
+
 class allocator_dbg_helper
 {
 

@@ -8,7 +8,9 @@
 #include <memory_resource>
 #include <memory>
 
-struct smart_mem_resource : public std::pmr::memory_resource
+// то, от куда мы наследуемся
+
+struct smart_mem_resource : public std::pmr::memory_resource // прямой родитель
 {
 private:
     virtual void do_deallocate_sm(void*) =0;
@@ -22,7 +24,7 @@ private:
 
 
 
-struct test_mem_resource : public smart_mem_resource
+struct test_mem_resource : public smart_mem_resource // пример реализации
 {
 private:
 

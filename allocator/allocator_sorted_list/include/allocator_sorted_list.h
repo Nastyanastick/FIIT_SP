@@ -15,11 +15,13 @@ class allocator_sorted_list final:
 
 private:
     
-    void *_trusted_memory;
+    void *_trusted_memory; // едиснтвенное поле, остальные данные храняться внутри этой памяти (указатель на начало большого куска памяти)
 
     static constexpr const size_t allocator_metadata_size = sizeof(std::pmr::memory_resource *) + sizeof(fit_mode) + sizeof(size_t) + sizeof(std::mutex) + sizeof(void*);
 
     static constexpr const size_t block_metadata_size = sizeof(void*) + sizeof(size_t);
+    
+    mutable std::mutex _mtx;
 
 public:
 
@@ -61,9 +63,9 @@ private:
 
     std::vector<allocator_test_utils::block_info> get_blocks_info_inner() const override;
 
-    class sorted_free_iterator
+    class sorted_free_iterator // ходит по свободным блокам
     {
-        void* _free_ptr;
+        void* _free_ptr; // укказатель на текущий свободный блок
 
     public:
 
@@ -73,28 +75,28 @@ private:
         using pointer = void**;
         using difference_type = ptrdiff_t;
 
-        bool operator==(const sorted_free_iterator&) const noexcept;
+        bool operator==(const sorted_free_iterator&) const noexcept; // указывают ли два итератора на один и тот же блок
 
-        bool operator!=(const sorted_free_iterator&) const noexcept;
+        bool operator!=(const sorted_free_iterator&) const noexcept; // указывают ли итераторы на разные места
 
-        sorted_free_iterator& operator++() & noexcept;
+        sorted_free_iterator& operator++() & noexcept; // префиксный инкремент ++it; возвращает ссылку на то, на что передвигает (на следущий свободный блок)
 
-        sorted_free_iterator operator++(int n);
+        sorted_free_iterator operator++(int n); // постфикcный инкремент it++; возвращает исходную ссылку
 
-        size_t size() const noexcept;
+        size_t size() const noexcept; // возвращает размер текущего свободного блока
 
-        void* operator*() const noexcept;
+        void* operator*() const noexcept; // разыменование, возвращает то, на что указывает итератор (текущий свободный блок)
 
-        sorted_free_iterator();
+        sorted_free_iterator(); // конструктор
 
-        sorted_free_iterator(void* trusted);
+        sorted_free_iterator(void* trusted); // создает итератор, который указывает на какой-то свободный блок
     };
 
-    class sorted_iterator
+    class sorted_iterator // ходит по всем блокам
     {
-        void* _free_ptr;
-        void* _current_ptr;
-        void* _trusted_memory;
+        void* _free_ptr;  // следующий свободный блок (может быть и текущий)
+        void* _current_ptr; // указатель на текущий блок
+        void* _trusted_memory; // границы области (указатель на начало выделенной области)
 
     public:
 

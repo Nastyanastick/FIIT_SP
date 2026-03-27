@@ -1,0 +1,23 @@
+[33ma4eb4d5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Update tasks and tests
+[33m04c2795[m Prepare for new course
+[33m98feb92[m Merge remote-tracking branch 'origin/master'
+[33m2e222a3[m Many fixes
+[33m90e0ed5[m Merge pull request #2 from DesCaldnd/hotfix_v2
+[33mf86bf55[m Fixed test and dependency
+[33mab1bcf7[m Merge pull request #1 from DesCaldnd/hotfix
+[33m3c8e80a[m new branch
+[33m3e8a5b9[m fixed clown errors
+[33m669ee5f[m Macros fix
+[33m8f242eb[m BST iterator const fix, logger argument name changed to safe one
+[33mcfc91b3[m delete_node fix
+[33m72cb732[m Update CMakeLists.txt
+[33m2f8f66f[m BST iterator fix
+[33m80f0513[m Merge branch 'master' of github.com:DesCaldnd/FIIT_FA_SP
+[33mb6ab34f[m Added tasks, updated README.md
+[33ma6459dd[m Compatability fix
+[33m63aff76[m Compatability fix
+[33m39cd9e8[m all b fixed
+[33m7327754[m fixed
+[33m2dc6d28[m B_tree improvements
+[33m12ba6af[m some improvements
+[33m8f4da6a[m Init
