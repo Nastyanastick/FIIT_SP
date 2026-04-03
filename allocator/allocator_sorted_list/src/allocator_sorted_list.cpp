@@ -1,5 +1,7 @@
 #include <not_implemented.h>
 #include "../include/allocator_sorted_list.h"
+#include <cstring>
+
 
 namespace
 {
@@ -174,14 +176,94 @@ allocator_sorted_list::allocator_sorted_list(
 
 }
 
-allocator_sorted_list::allocator_sorted_list(const allocator_sorted_list &other)
+allocator_sorted_list::allocator_sorted_list(const allocator_sorted_list &other) // копирование
 {
-    throw not_implemented("allocator_sorted_list::allocator_sorted_list(const allocator_sorted_list &other)", "your code should be here...");
+    std::lock_guard<std::mutex> lock(other._mtx);
+    if (other._trusted_memory == nullptr)
+    {
+        _trusted_memory = nullptr;
+        return;
+    }
+    auto* other_meta = get_meta(other._trusted_memory);
+    size_t total_size = other_meta->total_size;
+    auto* parent = other_meta->parent_allocator;
+    _trusted_memory = parent->allocate(total_size);
+    std::memcpy(_trusted_memory, other._trusted_memory, total_size); // куда, откуда, сколько
+
+    auto* new_meta = get_meta(_trusted_memory);
+    auto* old_base = reinterpret_cast<unsigned char*>(other._trusted_memory);
+    auto* new_base = reinterpret_cast<unsigned char*>(_trusted_memory);
+
+    if (new_meta->first_free_block != nullptr)
+    {
+        auto* old_p = reinterpret_cast<unsigned char*>(new_meta->first_free_block);
+        new_meta->first_free_block = new_base + (old_p - old_base);
+    }
+
+    auto* current = new_base + sizeof(allocator_meta);
+    auto* end = new_base + new_meta->total_size;
+
+    while (current < end)
+    {
+        auto* block = reinterpret_cast<free_block_header*>(current);
+        block->owner = this;
+        if (block->is_free && block->next_free != nullptr)
+        {
+            auto* old_p = reinterpret_cast<unsigned char*>(block->next_free);
+            block->next_free = new_base + (old_p - old_base);
+        }
+        current += sizeof(free_block_header) + block->block_size;
+    }
+
 }
 
-allocator_sorted_list &allocator_sorted_list::operator=(const allocator_sorted_list &other)
+allocator_sorted_list &allocator_sorted_list::operator=(const allocator_sorted_list &other) // копирование присваиванием
 {
-    throw not_implemented("allocator_sorted_list &allocator_sorted_list::operator=(const allocator_sorted_list &other)", "your code should be here...");
+    if (this == &other) return *this;
+    std::scoped_lock lock(_mtx, other._mtx);
+    void* new_memory = nullptr;
+
+    if (other._trusted_memory != nullptr)
+    {
+        auto* other_meta = get_meta(other._trusted_memory);
+        size_t total_size = other_meta->total_size;
+        auto* parent = other_meta->parent_allocator;
+
+        new_memory = parent->allocate(total_size);
+        std::memcpy(new_memory, other._trusted_memory, total_size);
+
+        auto* new_meta = get_meta(new_memory);
+        auto* old_base = reinterpret_cast<unsigned char*>(other._trusted_memory);
+        auto* new_base = reinterpret_cast<unsigned char*>(new_memory);
+
+        if (new_meta->first_free_block != nullptr)
+        {
+            auto* old_p = reinterpret_cast<unsigned char*>(new_meta->first_free_block);
+            new_meta->first_free_block = new_base + (old_p - old_base);
+        }
+        auto* current = new_base + sizeof(allocator_meta);
+        auto* end = new_base + new_meta->total_size;
+
+        while (current < end)
+        {
+            auto* block = reinterpret_cast<free_block_header*>(current);
+            block->owner = this;
+            if (block->is_free && block->next_free != nullptr)
+            {
+                auto* old_p = reinterpret_cast<unsigned char*>(block->next_free);
+                block->next_free = new_base + (old_p - old_base);
+            }
+            current += sizeof(free_block_header) + block->block_size;
+        }
+    }
+    if (_trusted_memory != nullptr)
+    {
+        auto* meta = get_meta(_trusted_memory);
+        meta->parent_allocator->deallocate(_trusted_memory, meta->total_size);
+    }
+    _trusted_memory = new_memory;
+    return *this;
+
 }
 
 bool allocator_sorted_list::do_is_equal(const std::pmr::memory_resource &other) const noexcept // равны ли два ресурса
