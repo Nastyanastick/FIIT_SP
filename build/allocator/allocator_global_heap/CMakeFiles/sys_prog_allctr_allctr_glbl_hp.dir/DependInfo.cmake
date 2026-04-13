@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/kirie/.vscode/FIIT_SP/allocator/allocator_global_heap/src/allocator_global_heap.cpp" "allocator/allocator_global_heap/CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/src/allocator_global_heap.cpp.o" "gcc" "allocator/allocator_global_heap/CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/src/allocator_global_heap.cpp.o.d"
+  "C:/Users/kirie/.vscode/FIIT_SP/allocator/allocator_global_heap/src/allocator_global_heap.cpp" "allocator/allocator_global_heap/CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/src/allocator_global_heap.cpp.obj" "gcc" "allocator/allocator_global_heap/CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/src/allocator_global_heap.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

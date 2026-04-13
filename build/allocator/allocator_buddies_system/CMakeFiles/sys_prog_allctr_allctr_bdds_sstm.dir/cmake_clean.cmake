@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/src/allocator_buddies_system.cpp.o"
-  "CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/src/allocator_buddies_system.cpp.o.d"
+  "CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/src/allocator_buddies_system.cpp.obj"
+  "CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/src/allocator_buddies_system.cpp.obj.d"
   "libsys_prog_allctr_allctr_bdds_sstm.a"
   "libsys_prog_allctr_allctr_bdds_sstm.pdb"
 )

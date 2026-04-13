@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sys_prog_assctv_cntnr.dir/src/hhh.cpp.o"
-  "CMakeFiles/sys_prog_assctv_cntnr.dir/src/hhh.cpp.o.d"
+  "CMakeFiles/sys_prog_assctv_cntnr.dir/src/hhh.cpp.obj"
+  "CMakeFiles/sys_prog_assctv_cntnr.dir/src/hhh.cpp.obj.d"
   "libsys_prog_assctv_cntnr.a"
   "libsys_prog_assctv_cntnr.pdb"
 )

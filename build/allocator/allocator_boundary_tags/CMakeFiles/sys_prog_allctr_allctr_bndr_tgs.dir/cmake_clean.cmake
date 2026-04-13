@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sys_prog_allctr_allctr_bndr_tgs.dir/src/allocator_boundary_tags.cpp.o"
-  "CMakeFiles/sys_prog_allctr_allctr_bndr_tgs.dir/src/allocator_boundary_tags.cpp.o.d"
+  "CMakeFiles/sys_prog_allctr_allctr_bndr_tgs.dir/src/allocator_boundary_tags.cpp.obj"
+  "CMakeFiles/sys_prog_allctr_allctr_bndr_tgs.dir/src/allocator_boundary_tags.cpp.obj.d"
   "libsys_prog_allctr_allctr_bndr_tgs.a"
   "libsys_prog_allctr_allctr_bndr_tgs.pdb"
 )

@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_dbg_helper.cpp.o"
-  "CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_dbg_helper.cpp.o.d"
-  "CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_test_utils.cpp.o"
-  "CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_test_utils.cpp.o.d"
-  "CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator.cpp.o"
-  "CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator.cpp.o.d"
+  "CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_dbg_helper.cpp.obj"
+  "CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_dbg_helper.cpp.obj.d"
+  "CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_test_utils.cpp.obj"
+  "CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_test_utils.cpp.obj.d"
+  "CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator.cpp.obj"
+  "CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator.cpp.obj.d"
   "libsys_prog_allctr_allctr.a"
   "libsys_prog_allctr_allctr.pdb"
 )

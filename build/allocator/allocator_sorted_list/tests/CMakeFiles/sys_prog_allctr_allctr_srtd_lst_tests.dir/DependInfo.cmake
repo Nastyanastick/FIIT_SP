@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/kirie/.vscode/FIIT_SP/allocator/allocator_sorted_list/tests/allocator_sorted_list_tests.cpp" "allocator/allocator_sorted_list/tests/CMakeFiles/sys_prog_allctr_allctr_srtd_lst_tests.dir/allocator_sorted_list_tests.cpp.o" "gcc" "allocator/allocator_sorted_list/tests/CMakeFiles/sys_prog_allctr_allctr_srtd_lst_tests.dir/allocator_sorted_list_tests.cpp.o.d"
+  "C:/Users/kirie/.vscode/FIIT_SP/allocator/allocator_sorted_list/tests/allocator_sorted_list_tests.cpp" "allocator/allocator_sorted_list/tests/CMakeFiles/sys_prog_allctr_allctr_srtd_lst_tests.dir/allocator_sorted_list_tests.cpp.obj" "gcc" "allocator/allocator_sorted_list/tests/CMakeFiles/sys_prog_allctr_allctr_srtd_lst_tests.dir/allocator_sorted_list_tests.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

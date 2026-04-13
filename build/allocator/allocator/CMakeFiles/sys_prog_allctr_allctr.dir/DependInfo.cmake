@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/kirie/.vscode/FIIT_SP/allocator/allocator/src/allocator_dbg_helper.cpp" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_dbg_helper.cpp.o" "gcc" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_dbg_helper.cpp.o.d"
-  "/mnt/c/Users/kirie/.vscode/FIIT_SP/allocator/allocator/src/allocator_test_utils.cpp" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_test_utils.cpp.o" "gcc" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_test_utils.cpp.o.d"
-  "/mnt/c/Users/kirie/.vscode/FIIT_SP/allocator/allocator/src/pp_allocator.cpp" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator.cpp.o" "gcc" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator.cpp.o.d"
+  "C:/Users/kirie/.vscode/FIIT_SP/allocator/allocator/src/allocator_dbg_helper.cpp" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_dbg_helper.cpp.obj" "gcc" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_dbg_helper.cpp.obj.d"
+  "C:/Users/kirie/.vscode/FIIT_SP/allocator/allocator/src/allocator_test_utils.cpp" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_test_utils.cpp.obj" "gcc" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/allocator_test_utils.cpp.obj.d"
+  "C:/Users/kirie/.vscode/FIIT_SP/allocator/allocator/src/pp_allocator.cpp" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator.cpp.obj" "gcc" "allocator/allocator/CMakeFiles/sys_prog_allctr_allctr.dir/src/pp_allocator.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

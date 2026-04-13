@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/src/allocator_global_heap.cpp.o"
-  "CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/src/allocator_global_heap.cpp.o.d"
+  "CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/src/allocator_global_heap.cpp.obj"
+  "CMakeFiles/sys_prog_allctr_allctr_glbl_hp.dir/src/allocator_global_heap.cpp.obj.d"
   "libsys_prog_allctr_allctr_glbl_hp.a"
   "libsys_prog_allctr_allctr_glbl_hp.pdb"
 )

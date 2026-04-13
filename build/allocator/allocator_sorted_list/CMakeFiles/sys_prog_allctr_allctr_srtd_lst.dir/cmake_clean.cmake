@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sys_prog_allctr_allctr_srtd_lst.dir/src/allocator_sorted_list.cpp.o"
-  "CMakeFiles/sys_prog_allctr_allctr_srtd_lst.dir/src/allocator_sorted_list.cpp.o.d"
+  "CMakeFiles/sys_prog_allctr_allctr_srtd_lst.dir/src/allocator_sorted_list.cpp.obj"
+  "CMakeFiles/sys_prog_allctr_allctr_srtd_lst.dir/src/allocator_sorted_list.cpp.obj.d"
   "libsys_prog_allctr_allctr_srtd_lst.a"
   "libsys_prog_allctr_allctr_srtd_lst.pdb"
 )

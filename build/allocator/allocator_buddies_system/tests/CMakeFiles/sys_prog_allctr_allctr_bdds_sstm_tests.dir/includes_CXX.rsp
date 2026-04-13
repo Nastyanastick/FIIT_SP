@@ -1,0 +1,1 @@
+-IC:/Users/kirie/.vscode/FIIT_SP/allocator/allocator_buddies_system/./include -IC:/Users/kirie/.vscode/FIIT_SP/common/./include -IC:/Users/kirie/.vscode/FIIT_SP/allocator/allocator/./include -isystem "C:/Users/kirie/.vscode/FIIT_SP/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/kirie/.vscode/FIIT_SP/build/_deps/googletest-src/googletest"

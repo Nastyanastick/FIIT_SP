@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /mnt/c/Users/kirie/.vscode/FIIT_SP/build/_deps/googletest-src
-# Build directory: /mnt/c/Users/kirie/.vscode/FIIT_SP/build/_deps/googletest-build
+# Source directory: C:/Users/kirie/.vscode/FIIT_SP/build/_deps/googletest-src
+# Build directory: C:/Users/kirie/.vscode/FIIT_SP/build/_deps/googletest-build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

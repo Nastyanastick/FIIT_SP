@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/kirie/.vscode/FIIT_SP/common/src/not_implemented.cpp" "common/CMakeFiles/sys_prog_cmmn.dir/src/not_implemented.cpp.o" "gcc" "common/CMakeFiles/sys_prog_cmmn.dir/src/not_implemented.cpp.o.d"
+  "C:/Users/kirie/.vscode/FIIT_SP/common/src/not_implemented.cpp" "common/CMakeFiles/sys_prog_cmmn.dir/src/not_implemented.cpp.obj" "gcc" "common/CMakeFiles/sys_prog_cmmn.dir/src/not_implemented.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

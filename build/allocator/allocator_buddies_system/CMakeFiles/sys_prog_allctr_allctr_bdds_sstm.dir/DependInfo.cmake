@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/kirie/.vscode/FIIT_SP/allocator/allocator_buddies_system/src/allocator_buddies_system.cpp" "allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/src/allocator_buddies_system.cpp.o" "gcc" "allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/src/allocator_buddies_system.cpp.o.d"
+  "C:/Users/kirie/.vscode/FIIT_SP/allocator/allocator_buddies_system/src/allocator_buddies_system.cpp" "allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/src/allocator_buddies_system.cpp.obj" "gcc" "allocator/allocator_buddies_system/CMakeFiles/sys_prog_allctr_allctr_bdds_sstm.dir/src/allocator_buddies_system.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

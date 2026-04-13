@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sys_prog_allctr_allctr_bdds_sstm_tests.dir/allocator_buddies_system_tests.cpp.o"
-  "CMakeFiles/sys_prog_allctr_allctr_bdds_sstm_tests.dir/allocator_buddies_system_tests.cpp.o.d"
-  "sys_prog_allctr_allctr_bdds_sstm_tests"
+  "CMakeFiles/sys_prog_allctr_allctr_bdds_sstm_tests.dir/allocator_buddies_system_tests.cpp.obj"
+  "CMakeFiles/sys_prog_allctr_allctr_bdds_sstm_tests.dir/allocator_buddies_system_tests.cpp.obj.d"
+  "libsys_prog_allctr_allctr_bdds_sstm_tests.dll.a"
+  "sys_prog_allctr_allctr_bdds_sstm_tests.exe"
+  "sys_prog_allctr_allctr_bdds_sstm_tests.exe.manifest"
   "sys_prog_allctr_allctr_bdds_sstm_tests.pdb"
 )
 

@@ -15,6 +15,23 @@ class allocator_boundary_tags final :
 
 private:
 
+    struct block_header
+    {
+        size_t block_size; // и память и метаданные
+        block_header* prev;
+        block_header* next;
+        void* owner;
+    };
+
+    struct allocator_meta
+    {
+        std::pmr::memory_resource* parent_allocator;
+        allocator_with_fit_mode::fit_mode fit_mode;
+        size_t space_size; // без матоданных аллокатора
+        std::mutex mutex;
+        block_header* occupied_head;
+    };
+
     static constexpr const size_t allocator_metadata_size = sizeof(memory_resource*) + sizeof(allocator_with_fit_mode::fit_mode) +
                                                             sizeof(size_t) + sizeof(std::mutex) + sizeof(void*);
 
@@ -65,6 +82,9 @@ public:
     std::vector<allocator_test_utils::block_info> get_blocks_info() const override;
 
 private:
+
+    allocator_meta* get_meta() const noexcept;
+    block_header* get_first_block() const noexcept;
 
     std::vector<allocator_test_utils::block_info> get_blocks_info_inner() const override;
 

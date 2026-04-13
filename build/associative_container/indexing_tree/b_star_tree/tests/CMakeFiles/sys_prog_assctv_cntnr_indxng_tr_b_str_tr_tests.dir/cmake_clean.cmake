@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dir/b_star_tree_tests.cpp.o"
-  "CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dir/b_star_tree_tests.cpp.o.d"
-  "sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests"
+  "CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dir/b_star_tree_tests.cpp.obj"
+  "CMakeFiles/sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dir/b_star_tree_tests.cpp.obj.d"
+  "libsys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.dll.a"
+  "sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.exe"
+  "sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.exe.manifest"
   "sys_prog_assctv_cntnr_indxng_tr_b_str_tr_tests.pdb"
 )
 

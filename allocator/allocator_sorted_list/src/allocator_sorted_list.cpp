@@ -31,7 +31,7 @@ static allocator_meta* get_meta(void* trusted_memory) noexcept // для зап�
 {
     return reinterpret_cast<allocator_meta*>(trusted_memory);
 }
-
+ 
 allocator_sorted_list::~allocator_sorted_list()
 {
     if (_trusted_memory == nullptr) return;
@@ -79,9 +79,6 @@ allocator_sorted_list::allocator_sorted_list(
     meta->parent_allocator = parent_allocator;
     meta->mode = allocate_fit_mode;
     meta->first_free_block = nullptr;
-    // начало всей области, пропускаем метаданные алокатора -> первый свободный блок. unsigned char - чтобы прибавлять байты было удобней
-    // типо сдвинься с указателя на байты на sizeof. у нас _trusted_memory становится указателем на байты (первый байт доверенной области)
-    // локальная переменная
     auto* first_block = reinterpret_cast<free_block_header*>(reinterpret_cast<unsigned char*>(_trusted_memory) + sizeof(allocator_meta));
     first_block->block_size = space_size - sizeof(allocator_meta) - sizeof(free_block_header);
     first_block->next_free = nullptr;
@@ -214,7 +211,6 @@ allocator_sorted_list::allocator_sorted_list(const allocator_sorted_list &other)
         }
         current += sizeof(free_block_header) + block->block_size;
     }
-
 }
 
 allocator_sorted_list &allocator_sorted_list::operator=(const allocator_sorted_list &other) // копирование присваиванием

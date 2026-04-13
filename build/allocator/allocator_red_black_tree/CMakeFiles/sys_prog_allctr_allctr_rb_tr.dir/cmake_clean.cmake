@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/src/allocator_red_black_tree.cpp.o"
-  "CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/src/allocator_red_black_tree.cpp.o.d"
+  "CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/src/allocator_red_black_tree.cpp.obj"
+  "CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/src/allocator_red_black_tree.cpp.obj.d"
   "libsys_prog_allctr_allctr_rb_tr.a"
   "libsys_prog_allctr_allctr_rb_tr.pdb"
 )

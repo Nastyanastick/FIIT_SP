@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/kirie/.vscode/FIIT_SP/allocator/allocator_red_black_tree/src/allocator_red_black_tree.cpp" "allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/src/allocator_red_black_tree.cpp.o" "gcc" "allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/src/allocator_red_black_tree.cpp.o.d"
+  "C:/Users/kirie/.vscode/FIIT_SP/allocator/allocator_red_black_tree/src/allocator_red_black_tree.cpp" "allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/src/allocator_red_black_tree.cpp.obj" "gcc" "allocator/allocator_red_black_tree/CMakeFiles/sys_prog_allctr_allctr_rb_tr.dir/src/allocator_red_black_tree.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
