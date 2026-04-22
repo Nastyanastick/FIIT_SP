@@ -40,8 +40,16 @@ private:
 
     struct block_metadata
     {
-        bool occupied : 1;
-        unsigned char size : 7;
+        bool occupied : 1; // занят или нет
+        unsigned char size : 7; // степень двойки
+    };
+
+    struct allocator_header
+    {
+        std::pmr::memory_resource* parent_allocator;
+        allocator_with_fit_mode::fit_mode mode;
+        unsigned char space_power;
+        std::mutex mtx;
     };
 
     void *_trusted_memory;
@@ -50,8 +58,7 @@ private:
      * TODO: You must improve it for alignment support
      */
 
-    static constexpr const size_t allocator_metadata_size = sizeof(allocator_dbg_helper*) + sizeof(fit_mode) + sizeof(unsigned char) + sizeof(std::mutex);
-
+    static constexpr size_t allocator_metadata_size = sizeof(allocator_header);
     static constexpr const size_t occupied_block_metadata_size = sizeof(block_metadata) + sizeof(void*);
 
     static constexpr const size_t free_block_metadata_size = sizeof(block_metadata);
@@ -61,7 +68,7 @@ private:
 public:
 
     explicit allocator_buddies_system(
-            size_t space_size_power_of_two,
+            size_t space_size,
             std::pmr::memory_resource *parent_allocator = nullptr,
             allocator_with_fit_mode::fit_mode allocate_fit_mode = allocator_with_fit_mode::fit_mode::first_fit);
 
@@ -99,10 +106,35 @@ private:
 
     std::vector<allocator_test_utils::block_info> get_blocks_info_inner() const override;
 
+    static std::byte* bytes(void* p) noexcept; // превращает указатель на байты, вместо reinterpret_cast
+    static const std::byte* bytes(const void* p) noexcept;
+
+    std::pmr::memory_resource*& parent_allocator_ref() noexcept; // родитель аллокатора
+    const std::pmr::memory_resource* parent_allocator_ref() const noexcept;
+
+    fit_mode& fit_mode_ref() noexcept; // получить режим поиска
+    const fit_mode& fit_mode_ref() const noexcept;
+
+    unsigned char& space_power_ref() noexcept; // степень двойки
+    const unsigned char& space_power_ref() const noexcept;
+
+    std::mutex& mutex_ref() noexcept; // получить mutex
+    const std::mutex& mutex_ref() const noexcept;
+
+    block_metadata* first_block() noexcept; // указатель на первый блок (тот, который в самом начале большой)
+    const block_metadata* first_block() const noexcept;
+
+    static size_t block_size(const block_metadata* block) noexcept; // из степени двойки в реальный размер
+    static void* user_memory(block_metadata* block) noexcept; // указатель на память, которую нужно отдать пользователю
+    static const void* user_memory(const block_metadata* block) noexcept;
+    allocator_header* header() noexcept;
+    const allocator_header* header() const noexcept;
+
+
     /** TODO: Highly recommended for helper functions to return references */
 
     class buddy_iterator
-    {
+    {   
         void* _block;
 
     public:
